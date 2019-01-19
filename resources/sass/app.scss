@@ -7,8 +7,42 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+.container{
+  padding-top: 60px;
+}
+/* with css reset */
+* { box-sizing: border-box; }
+table { margin: 10px; }
+tr:first-child td {
+  border-top-color: black;
+}
+tr:nth-child(3n) td {
+  border-bottom-color: black;
+}
+td {
+  border: 1px solid lightgrey;
+  height: 40px;
+  width: 40px;
+}
+td:first-child {
+  border-left-color: black;
+}
+td:nth-child(3n) {
+  border-right-color: black;
+}
+input {
+  padding: 0;
+  text-align: center;
+  border: 0;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+}
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+input:hover {
+  background: #eee;
+}
+input.input-number.not-allowed {
+  border: 1px solid red;
+  background-color: #dc9f9f;
 }
