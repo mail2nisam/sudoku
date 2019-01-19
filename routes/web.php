@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $sample = \App\Sudoku\Sudoku::generate();
+    if($sample){
+        return redirect()->route("single_puzzle",["uuid"=>$sample->id]);
+    }
+
+})->name("home");
+Route::get('/sudoku/{uuid}', function ($uuid) {
+    $sample = \App\Puzzle::find($uuid)->matrix;
+    return view('welcome', ['cells' => $sample,'matrix_id'=>$uuid]);
+})->name("single_puzzle");
+

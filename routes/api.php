@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/sudoku/check-possibility/{number?}', 'AppController@checkPossibility')->name('is_allowed');
+Route::get('/sudoku/auto-resolve/{puzzleId}', 'AppController@autoResolve')->name('auto_resolve');
+Route::post('/sudoku/validate/{puzzleId}', 'AppController@validatePuzzle')->name('auto_resolve');
